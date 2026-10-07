@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #111111;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+a {
+    color: #111111;
+    font-weight: bold;
+}
+
+/* MOBILE VIEW */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #111111;
+    border: 3px solid #333333;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* TABLET VIEW */
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    figure {
+        border-radius: 50%;
+    }
+
+    figure:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* LARGE SCREEN VIEW */
+@media screen and (min-width: 992px) {
+    figure {
+        border-radius: 0;
+    }
+
+    /* Remove tablet-only rule from the final figure */
+    figure:last-child {
+        grid-column: auto;
+    }
+
+    /* Every third figure takes both columns */
+    figure:nth-child(3n) {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* DARK COLOR SCHEME */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f5f5f5;
+    }
+
+    figure {
+        background-color: #222222;
+        color: #ffe99a;
+        border-color: #000000;
+    }
+
+    a {
+        color: #ffe99a;
+    }
+}
